@@ -13,7 +13,7 @@ This repo has been created for API automation assesment.
 
 * Visual Studio 2022 installed 
 * Specflow will have to be installed in Visual Studio > extensions > Manage extensions
-* Project related dependencies no need to be installed. But please make you have the below dependencies are installed once you have cloned the project inTools > Nuget Package Manger > Manage Nuget Package For Solution
+* Project related dependencies no need to be installed. But please make sure you have the below dependencies are installed once you have cloned the project inTools > Nuget Package Manger > Manage Nuget Package For Solution
 
 ![image](https://user-images.githubusercontent.com/109270574/202766915-49102a1e-a4a9-494c-93a1-6c86a98adc42.png)
 
