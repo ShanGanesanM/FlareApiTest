@@ -63,7 +63,7 @@ namespace FlareApiTest.StepDefinitions
 
 
         }
-
+        [Then(@"I send '([^']*)' request with favouriteId '([^']*)'")]
         [When(@"I send '([^']*)' request with favouriteId '([^']*)'")]
         public void WhenISendRequestWithFavouriteId(string method, string favouriteId)
         {
@@ -77,6 +77,24 @@ namespace FlareApiTest.StepDefinitions
             var reponse = requestResponse;
             FavouriteDeleteResponseModel deleteResponse = JsonConvert.DeserializeObject<FavouriteDeleteResponseModel>(reponse.Content);
             Assert.AreEqual(deleteResponse.message, responseBodyMessage);
+        }
+
+        [Then(@"I see the response contains '([^']*)'")]
+        public void ThenISeeTheResponseContains(string imageName)
+        {
+            var reponse = requestResponse;
+            List<FavouriteGetResponseModel> getResponse = JsonConvert.DeserializeObject<List<FavouriteGetResponseModel>>(reponse.Content);
+            var imageIdVerification = getResponse.Any(x => x.image_id.Equals(imageName));
+            imageIdVerification.Should().BeTrue();
+        }
+
+        [Then(@"I see the response does not contain id '([^']*)'")]
+        public void ThenISeeTheResponseDoesNotContainId(int id)
+        {
+            var reponse = requestResponse;
+            List<FavouriteGetResponseModel> getResponse = JsonConvert.DeserializeObject<List<FavouriteGetResponseModel>>(reponse.Content);
+            var imageIdVerification = getResponse.Any(x => x.id.Equals(id));
+            imageIdVerification.Should().BeFalse();
         }
 
 
