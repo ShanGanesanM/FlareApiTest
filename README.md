@@ -29,6 +29,7 @@ This repo has been created for API automation assesment.
 * Build the solution
 * Go to test tab on VS and select Test Explorer
 * Exapand test file and right click on specific test case. then either debug or run the test case
+* Please change value for imageId on first step and last step for test1 as they have to be unique. Similarly change favouriteId on step one and last step on test4 as the id would have been deleted if you have ran those test cases once.
 
 ## Branching rules
 
