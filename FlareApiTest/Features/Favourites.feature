@@ -24,16 +24,8 @@ Scenario: Verify user can get specific favourite using get api
 
 @test4
 Scenario: Verify user can delete specific favourite using delete api
-     When I send 'DELETE' request with favouriteId '100100571'
+     When I send 'DELETE' request with favouriteId '100100567'
 	 Then I See the response is '200'
 	 And I see the response message contains 'SUCCESS'
 	 And I send 'GET' request with favouriteId '?sub_id=Shan3'
-	 And I see the response does not contain id '100100571'
-
-
-
-
-
-
-
-
+	 And I see the response does not contain id '100100567'
